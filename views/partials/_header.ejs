@@ -11,17 +11,26 @@
       </div>
     </div>
 
-      
+    <% if (username) { %>
         Logged In As: <%= username %> 
      
+        <form method="POST" action="/logout">
+          <button class="btn btn-light" disabled>
+            
+          </button>
+          <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
 
+        <% }  else { %>
+    
     <form class="form-inline" action="/login" method="POST">
       <div class="form-group mb-2">
         <input class="form-control" type="text" name= "username"  style="width: 300px; margin: 1em">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
-       
+   
+    <% }  %>
   </nav>
 </header>
 
